@@ -14,7 +14,7 @@ body {
 
 .header {
     height: 64px;
-    background-color: #13A0C6;
+    background-color: #342E37;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,7 +30,7 @@ body {
 
 .side-nav {
     width: 300px;
-    background-color: #FAFFFD;
+    background-color: #13A0C6;
     display: block;
     top: 0;
     bottom: 0;
@@ -62,7 +62,7 @@ body {
     border-radius: 20px;
     border: none;
     color: #fff;
-    background-color: #13A0C6;
+    background-color: #342E37;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -86,7 +86,7 @@ body {
     width: 56px;
     border-radius: 16px;
     border: 0;
-    background-color: #13A0C6;
+    background-color: #342E37;
     color: #000;
 }
 
@@ -101,16 +101,16 @@ body {
     color: #fff;
 }
 
-.nav-item span{
-    padding:10px 0;
+.nav-item span {
+    padding: 10px 0;
 }
 
-.nav-item.selected span{
-    color:#FA824C;
+.nav-item.selected span {
+    color: #FA824C;
     border-bottom: 2px solid #FA824C;
 }
 
-.nav-section {
+.nav-header-container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -118,27 +118,106 @@ body {
     align-items: center;
     height: 32px;
     padding: 6px 12px;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
-.nav-section:hover{
-    background-color:pink;
-    
+.nav-header-container:hover {
+    background-color: #1190b2;
 }
 
-.sample-card{
-    width:800px;
-    height:200px;
-    background-color:white;
-    box-shadow:0 1px 2px #3640434d, 0 1px 3px 1px #36404326;
-    border-radius:24px;
+.nav-subsection-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-subsection-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    height: 32px;
+    padding: 6px 36px;
+}
+
+.nav-subsection-item:hover {
+    background-color: #1190b2;
+}
+
+.sample-card {
+    width: 800px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 1px 2px #3640434d, 0 1px 3px 1px #36404326;
+    border-radius: 24px;
     margin-bottom: 24px;
+    padding:24px;
 }
 
-.cards-container{
-    flex:1;
+.cards-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding:40px;
+    padding: 40px;
 }
+
+.card-header {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-item-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+.k-input-container{
+    position:relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+}
+
+.conf-textbox {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #d2d2d2;
+    outline: 0;
+    font-size: 16px;
+    color: #212121;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.conf-textbox::placeholder {
+    color: transparent;
+}
+
+.conf-textbox:placeholder-shown ~ .conf-label {
+    font-size: 16px;
+    cursor: text;
+    top: 20px;
+  }
+
+  label,
+  .conf-textbox:focus ~ .conf-label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 12px;
+      color: #9b9b9b;
+  }
+
+  .conf-textbox:focus ~ .conf-label {
+      color: #009788;
+  }
+
+  .conf-textbox:focus {
+      padding-bottom: 6px;
+      border-bottom: 2px solid #009788;
+  }
