@@ -1,3 +1,12 @@
+:root {
+    --main-blue: #90caf9;
+    --main-orange: #FA824C;
+    --main-white: #fff;
+    --main-grey: rgba(255, 255, 255, 0.23);
+    --main-dark-grey: #fff;
+    --main-ease: cubic-bezier(.65,.05,.36,1);
+}
+
 body {
     display: block;
     height: 100%;
@@ -130,7 +139,7 @@ body {
     flex-direction: column;
 }
 
-.nav-subsection-item{
+.nav-subsection-item {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -151,7 +160,7 @@ body {
     box-shadow: 0 1px 2px #3640434d, 0 1px 3px 1px #36404326;
     border-radius: 24px;
     margin-bottom: 24px;
-    padding:24px;
+    padding: 24px;
 }
 
 .cards-container {
@@ -165,59 +174,62 @@ body {
 .card-header {
     font-size: 20px;
     font-weight: 700;
+    margin-bottom:12px;
 }
 
 .card-item-container {
-    display:flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
 
 }
-.k-input-container{
-    position:relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
+
+
+/* material 3 input */
+.outlined-input {
+    position: relative;
 }
 
-.conf-textbox {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid #d2d2d2;
-    outline: 0;
-    font-size: 16px;
-    color: #212121;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
+.outlined-input input {
+    color: var(--main-white);
+    height: 4rem;
+    outline: 1px solid var(--main-grey);
+    border-radius: 5px;
+    border: none;
+    background-color: var(--main-dark-grey);
+    padding-left: 20px;
+    font-size: 20px;
+    transition: .1s var(--main-ease);
 }
 
-.conf-textbox::placeholder {
-    color: transparent;
+.outlined-input label {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    background-color: var(--main-dark-grey);
+    color: rgba(0,0,0, 0.5);
+    text-align: center;
+    transition: .2s var(--main-ease);
+    font-size: 1.5rem;
+    pointer-events: none;
+    padding: 0 5px;
 }
 
-.conf-textbox:placeholder-shown ~ .conf-label {
-    font-size: 16px;
-    cursor: text;
-    top: 20px;
-  }
+.outlined-input input:not(:placeholder-shown) ~ label,
+.outlined-input input:focus ~ label {
+    top: 0px;
+    left: 10px;
+    font-size: 1rem;
+}
 
-  label,
-  .conf-textbox:focus ~ .conf-label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 12px;
-      color: #9b9b9b;
-  }
-
-  .conf-textbox:focus ~ .conf-label {
-      color: #009788;
-  }
-
-  .conf-textbox:focus {
-      padding-bottom: 6px;
-      border-bottom: 2px solid #009788;
-  }
+.outlined-input input:focus {
+    outline: 1px solid var(--main-orange) !important;
+}
+.outlined-input input:hover {
+    outline: 1px solid var(--main-white);
+}
+.outlined-input input:focus ~ label {
+    color: var(--main-orange) !important;
+}
